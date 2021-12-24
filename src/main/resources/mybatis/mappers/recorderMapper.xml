@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.portfolio.dao.RecorderDao">
+
+     <select id="selectRecorder" resultType="recorderModel">
+        SELECT seq,score,regdata,templatetype FROM TB_USER_SCORE
+    </select>
+    
+      <select id="checkRecorder" parameterType="recorderModel" resultType="Integer">
+        SELECT 
+        	Count(*) 
+        FROM TB_USER_SCORE 
+		WHERE templatetype=#{templatetype}
+			AND DATE_FORMAT(regdata, "%Y-%m-%d") = CURDATE()
+    </select>
+    
+</mapper>
