@@ -6,14 +6,22 @@
 
      <select id="selectRecorder" resultType="recorderModel">
         SELECT seq,score,regdata,templatetype FROM TB_USER_SCORE
-    </select>
+     </select>
     
-      <select id="checkRecorder" parameterType="recorderModel" resultType="Integer">
+     <select id="checkRecorder" parameterType="recorderModel" resultType="Integer">
         SELECT 
         	Count(*) 
         FROM TB_USER_SCORE 
 		WHERE templatetype=#{templatetype}
 			AND DATE_FORMAT(regdata, "%Y-%m-%d") = CURDATE()
-    </select>
+     </select>
+    
+     <select id="selectRecorderScore" parameterType="recorderModel" resultType="recorderModel">
+		SELECT 
+			score, templatetype 
+		FROM TB_USER_SCORE
+		WHERE DATE(regdata)= CURDATE()
+			AND templatetype=#{templatetype}
+     </select>
     
 </mapper>

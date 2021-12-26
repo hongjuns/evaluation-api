@@ -1,6 +1,7 @@
 package com.portfolio.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,14 +23,18 @@ public class RecorderController extends BaseController {
 	@Autowired
 	private RecorderService recorderService;
 	
+	@CrossOrigin(origins = "https://hhongjunss.me")
 	@RequestMapping(value="/check/recorder", method=RequestMethod.GET)
 	public int recorderList (HttpServletRequest request, HttpServletResponse response,RecorderModel recorderModel) {
-		/*
-		if (logger.isDebugEnabled()) {
-			logger.debug("recorderList");
-		}
-		*/
 		logger.info("recorderList");
 		return recorderService.checkRecorder(recorderModel);
 	}
+	
+	@CrossOrigin(origins = "https://hhongjunss.me")
+	@RequestMapping(value="/score/recorder", method=RequestMethod.GET)
+	public List<RecorderModel> recorderScore (HttpServletRequest request, HttpServletResponse response,RecorderModel recorderModel) {
+		logger.info("recorderScore");
+		return recorderService.selectRecorderScore(recorderModel);
+	}
+	
 }
