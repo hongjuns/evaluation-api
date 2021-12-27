@@ -28,6 +28,12 @@ public class RecorderServiceImpl  implements RecorderService {
 	public List<RecorderModel> selectRecorderScore(RecorderModel recorderModel) {
 		RecorderDao recorderDao = mysqlSqlSession.getMapper(RecorderDao.class);
 		return recorderDao.selectRecorderScore(recorderModel);
+	}
+
+	@Override
+	public int insertRecorderScore(RecorderModel recorderModel) {
+		RecorderDao recorderDao = mysqlSqlSession.getMapper(RecorderDao.class);
+		return recorderDao.insertRecorderScore(recorderModel);
 	} 
 	
 	

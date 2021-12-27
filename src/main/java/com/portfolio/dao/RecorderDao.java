@@ -8,4 +8,5 @@ public interface RecorderDao {
 	public List<RecorderModel> selectRecorder();
 	public int checkRecorder(RecorderModel recorderModel);
 	public List<RecorderModel> selectRecorderScore (RecorderModel recorderModel);
+	public int insertRecorderScore(RecorderModel recorderModel);
 }

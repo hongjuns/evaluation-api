@@ -31,7 +31,7 @@ public class SwaggerConfig {
 	                  .build();                   // selector build
 	  }
 	
-	  // 선택항목(responseMessage 리스트를 별도로 생성.(defaultResponseMessage 미사용))
+
 	  private ArrayList<ResponseMessage> getArrayList() {
 	        ArrayList<ResponseMessage> lists = new ArrayList<ResponseMessage>();
 	        lists.add(new ResponseMessageBuilder().code(500).message("이상한요청").build());
@@ -48,7 +48,7 @@ public class SwaggerConfig {
 	                "REST Api Documentation",                // swagger 설명
 	                "1.0",                                   // swaggeer 버전
 	                "localhost:8080",
-	                new Contact("kang-min-kyu","","aaa@gmail.com"), //작성자 정보
+	                new Contact("hongjun","","asws12345@naver.com"), //작성자 정보
 	                "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0",
 	                new ArrayList<VendorExtension>());
 	    }

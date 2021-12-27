@@ -7,4 +7,5 @@ public interface RecorderService {
 	public List<RecorderModel> selectRecorder();
 	public int checkRecorder(RecorderModel recorderModel);
 	public List<RecorderModel> selectRecorderScore (RecorderModel recorderModel);
+	public int insertRecorderScore(RecorderModel recorderModel);
 }

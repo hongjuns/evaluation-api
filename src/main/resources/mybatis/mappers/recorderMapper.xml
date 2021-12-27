@@ -23,5 +23,9 @@
 		WHERE DATE(regdata)= CURDATE()
 			AND templatetype=#{templatetype}
      </select>
+     
+    <insert id="insertRecorderScore" parameterType="recorderModel">
+    	INSERT INTO TB_USER_SCORE (score,templatetype) values (#{score},#{templatetype})
+    </insert>
     
 </mapper>
