@@ -1,7 +1,6 @@
 # evaluation-api
 발음평가 점수 저장 / 발음평가 통계를 위한 REST API
 
-# Skill & 구현내용
 <pre>
 - Spring framework + Swagger을 이용한 REST API 구현 
 - Language : Java 1.8 Framework : Spring 4.3.8
